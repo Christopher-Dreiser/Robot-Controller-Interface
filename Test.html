@@ -25,7 +25,6 @@
         }
 
         button:hover{background-color:orange;}
-        button:focus{background-color:red;}
 
 
 
@@ -38,15 +37,13 @@
 <center>
 <div class="grid-container">
     <div class="grid-item"></div>
-    <button onclick="forward()">Forward
-    </button>
-
+    <button onmousedown="forward()" onmouseup="stopForward()">Forward</button>
     <div class="grid-item"></div>
-    <button onclick="left()">Left  </button>
+    <button onmousedown="left()" onmouseup="stopLeft()">Left  </button>
     <div class="grid-item"></div>
-    <button onclick= "right()">Right </button>
+    <button onmousedown= "right()" onmouseup="stopRight()">Right </button>
     <div class="grid-item"></div>
-    <button onclick="backwards()">Backwards </button>
+    <button onmousedown="backwards()" onmouseup="stopBackwards()">Backwards </button>
     <div class="grid-item"></div>
 
 </div>
@@ -55,14 +52,26 @@
     function forward() {
         document.getElementById("demo").innerHTML = "YOU CLICKED FORWARD!";
     }
+    function stopForward() {
+        document.getElementById("demo").innerHTML = "YOU RELEASED FORWARD!";
+    }
     function backwards() {
         document.getElementById("demo").innerHTML = "YOU CLICKED BACKWARDS!";
+    }
+    function stopBackwards() {
+        document.getElementById("demo").innerHTML = "YOU RELEASED BACKWARDS!";
     }
     function right() {
         document.getElementById("demo").innerHTML = "YOU CLICKED RIGHT!";
     }
+    function stopRight() {
+        document.getElementById("demo").innerHTML = "YOU RELEASED RIGHT!";
+    }
     function left() {
         document.getElementById("demo").innerHTML = "YOU CLICKED LEFT!";
+    }
+    function stopLeft() {
+        document.getElementById("demo").innerHTML = "YOU RELEASED LEFT!";
     }
 </script>
 </body>
