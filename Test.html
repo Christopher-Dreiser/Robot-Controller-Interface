@@ -30,50 +30,25 @@
 
     </style>
 </head>
-<body>
+<body onload="init2()">
 <h1>Robot Controller</h1>
 
-<p id="demo"> </p>
+<p id="controller"> </p>
 <center>
 <div class="grid-container">
     <div class="grid-item"></div>
-    <button onmousedown="forward()" onmouseup="stopForward()">Forward</button>
+    <button onmousedown="forward()" onmouseup="stop()" onmouseleave="stop()">Forward</button>
     <div class="grid-item"></div>
-    <button onmousedown="left()" onmouseup="stopLeft()">Left  </button>
+    <button onmousedown="left()" onmouseup="stop()" onmouseleave = "stop()" >Left  </button>
     <div class="grid-item"></div>
-    <button onmousedown= "right()" onmouseup="stopRight()">Right </button>
+    <button onmousedown= "right()" onmouseup="stop()" onmouseleave="stop()">Right </button>
     <div class="grid-item"></div>
-    <button onmousedown="backwards()" onmouseup="stopBackwards()">Backwards </button>
+    <button onmousedown="backwards()" onmouseup="stop()" onmouseleave="stop()">Backwards </button>
     <div class="grid-item"></div>
 
 </div>
 </center>
-<script>
-    function forward() {
-        document.getElementById("demo").innerHTML = "YOU CLICKED FORWARD!";
-    }
-    function stopForward() {
-        document.getElementById("demo").innerHTML = "YOU RELEASED FORWARD!";
-    }
-    function backwards() {
-        document.getElementById("demo").innerHTML = "YOU CLICKED BACKWARDS!";
-    }
-    function stopBackwards() {
-        document.getElementById("demo").innerHTML = "YOU RELEASED BACKWARDS!";
-    }
-    function right() {
-        document.getElementById("demo").innerHTML = "YOU CLICKED RIGHT!";
-    }
-    function stopRight() {
-        document.getElementById("demo").innerHTML = "YOU RELEASED RIGHT!";
-    }
-    function left() {
-        document.getElementById("demo").innerHTML = "YOU CLICKED LEFT!";
-    }
-    function stopLeft() {
-        document.getElementById("demo").innerHTML = "YOU RELEASED LEFT!";
-    }
-</script>
+<script src="commands.js"></script>
 </body>
 </html>
 
